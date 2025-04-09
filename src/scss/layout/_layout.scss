@@ -1,0 +1,266 @@
+@use "../abstracts/vars";
+
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+}
+
+.product {
+	display: flex;
+	align-items: center;
+	height: 500px;
+}
+
+.product-images {
+	position: relative;
+	isolation: isolate;
+	height: 450px;
+	width: 320px;
+	z-index: 1;
+
+	.share-button {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 50px;
+		height: 50px;
+		z-index: 3;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.product-images-list {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 2;
+
+		li {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+
+			&.active {
+				opacity: 1;
+			}
+		}
+
+		img {
+			position: absolute;
+			top: -60px;
+			left: -80px;
+			width: 547px;
+			height: 600px;
+			max-width: none;
+		}
+	}
+
+	.product-bg {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 1;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: bottom left;
+		}
+	}
+}
+
+.product-content {
+	background-color: #fff;
+	padding: 3rem;
+	z-index: 2;
+	width: 350px;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+
+	.product-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.rating {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	p.price {
+		display: flex;
+		align-items: flex-start;
+		font-weight: 200;
+		font-size: 5rem;
+		line-height: 1;
+
+		span {
+			position: relative;
+			font-size: 3.2rem;
+			top: 0.5rem;
+		}
+	}
+
+	.product-header {
+		margin-top: 1.5rem;
+
+		.product-title-brand {
+			font-size: 3.2rem;
+			font-weight: 700;
+			display: inline-block;
+		}
+
+		.product-title-name {
+			font-size: 2rem;
+			font-weight: 200;
+			display: inline-block;
+		}
+	}
+
+	h4 {
+		margin-top: 2rem;
+		text-transform: uppercase;
+		color: vars.$light-grey;
+		font-size: 1.4rem;
+		font-weight: 500;
+	}
+
+	.product-colors {
+		display: flex;
+		gap: 1.25rem;
+		margin-top: 2rem;
+
+		button {
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			border: none;
+			background-color: currentColor;
+			cursor: pointer;
+			outline: 2px solid transparent;
+			outline-offset: 3px;
+			transition: outline-color 0.2s ease-in-out;
+
+			&:hover {
+				outline: 2px solid currentColor;
+			}
+		}
+
+		li.active {
+			button {
+				outline: 2px solid currentColor;
+			}
+		}
+
+		li[data-colour="teal"] {
+			color: vars.$teal;
+		}
+
+		li[data-colour="blue"] {
+			color: vars.$blue;
+		}
+
+		li[data-colour="green"] {
+			color: vars.$green;
+		}
+
+		li[data-colour="yellow"] {
+			color: vars.$yellow;
+		}
+
+		li[data-colour="purple"] {
+			color: vars.$purple;
+		}
+	}
+
+	.product-sizes {
+		display: flex;
+		margin-top: 0.5rem;
+
+		.size-button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 50px;
+			height: 40px;
+			border-radius: 0;
+			border: 1px solid vars.$light-grey;
+			cursor: pointer;
+
+			img {
+				width: 10px;
+				height: 10px;
+			}
+
+			&.decrement {
+				border-radius: 99px 0 0 99px;
+			}
+
+			&.increment {
+				border-radius: 0 99px 99px 0;
+			}
+		}
+
+		input {
+			width: 50px;
+			height: 40px;
+			border-top: 1px solid vars.$light-grey;
+			border-bottom: 1px solid vars.$light-grey;
+			text-align: center;
+			font-size: 2rem;
+			font-weight: 700;
+			color: vars.$dark-grey;
+		}
+	}
+
+	.button.add-to-cart {
+		margin-top: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+		width: 100%;
+		height: 50px;
+		border-radius: 99px;
+		background: vars.$button-gradient;
+		font-size: 1.4rem;
+		font-weight: 600;
+		line-height: 1;
+		text-transform: uppercase;
+		color: #fff;
+
+		img {
+			width: 8px;
+			height: 10px;
+		}
+	}
+
+	.add-to-wishlist {
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 400;
+		line-height: 1;
+		color: vars.$link-blue;
+		margin-top: 1.5rem;
+		text-decoration: underline;
+		text-underline-offset: 0.25rem;
+	}
+}

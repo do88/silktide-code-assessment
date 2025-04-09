@@ -1,18 +1,117 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/scss/index.scss" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <header>
-      <h1>Hello World</h1>
-    </header>
-    <main></main>
-    <footer></footer>
-    <script type="module" src="/src/ts/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/scss/index.scss" />
+  <title>Vite + TS</title>
+</head>
+
+<body>
+  <main>
+    <article class="product">
+      <figure class="product-images">
+        <button class="share-button">
+          <img src="/images/share-icon.png" alt="">
+          <span class="sr-text">Share the Nike Air Women's Running Shoe with your friends</span>
+        </button>
+
+        <ul class="product-images-list">
+          <li class="product-images-list-item" data-image="teal">
+            <img src="/images/shoe-teal.png" alt="Nike Air Women's Running Shoe in Teal">
+          </li>
+          <li class="product-images-list-item active" data-image="blue">
+            <img src="/images/shoe-blue.png" alt="Nike Air Women's Running Shoe in Blue">
+          </li>
+          <li class="product-images-list-item" data-image="green">
+            <img src="/images/shoe-green.png" alt="Nike Air Women's Running Shoe in Green">
+          </li>
+          <li class="product-images-list-item" data-image="yellow">
+            <img src="/images/shoe-yellow.png" alt="Nike Air Women's Running Shoe in Yellow">
+          </li>
+          <li class="product-images-list-item" data-image="purple">
+            <img src="/images/shoe-purple.png" alt="Nike Air Women's Running Shoe in Purple">
+          </li>
+        </ul>
+
+        <div class="product-bg">
+          <img src="/images/shoe-bg.png" alt="">
+        </div>
+      </figure>
+
+      <div class="product-content">
+        <div class="product-info">
+          <div class="rating">
+            <img src="/images/full-star.png" alt="">
+            <img src="/images/full-star.png" alt="">
+            <img src="/images/full-star.png" alt="">
+            <img src="/images/full-star.png" alt="">
+            <img src="/images/half-star.png" alt="">
+            <span class="sr-text">4.5 out of 5 stars</span>
+          </div>
+          <p class="price"><span>$</span>220</p>
+        </div>
+
+        <header class="product-header">
+          <h2 class="product-title">
+            <span class="product-title-brand">Nike Air</span>
+            <span class="product-title-name">Women's Running Shoe</span>
+          </h2>
+        </header>
+
+        <h4>Color</h4>
+
+        <ul class="product-colors">
+          <li class="product-colors-item" data-colour="teal">
+            <button aria-label="Select Teal Trainer"><span class="sr-text">Select Teal Trainer</span></button>
+          </li>
+          <li class="product-colors-item active" data-colour="blue">
+            <button aria-label="Select Blue Trainer"><span class="sr-text">Select Blue Trainer</span></button>
+          </li>
+          <li class="product-colors-item" data-colour="green">
+            <button aria-label="Select Green Trainer"><span class="sr-text">Select Green Trainer</span></button>
+          </li>
+          <li class="product-colors-item" data-colour="yellow">
+            <button aria-label="Select Yellow Trainer"><span class="sr-text">Select Yellow Trainer</span></button>
+          </li>
+          <li class="product-colors-item" data-colour="purple">
+            <button aria-label="Select Purple Trainer"><span class="sr-text">Select Purple Trainer</span></button>
+          </li>
+        </ul>
+
+        <h4>Size</h4>
+
+        <div class="product-sizes">
+          <button class="size-button decrement" aria-label="Decrement Shoe Size to 9">
+            <img src="/images/minus.svg" alt="">
+            <span class="sr-text">Decrement Size to 9</span>
+          </button>
+          <input type="text" value="10" readonly>
+          <button class="size-button increment" aria-label="Increment Shoe Size to 11">
+            <img src="/images/plus.svg" alt="">
+            <span class="sr-text">Increment Size to 11</span>
+          </button>
+        </div>
+
+        <a class="button add-to-cart" href="#">
+          Add to Cart
+          <span><img src="/images/right-arrow.png" alt=""></span>
+        </a>
+
+        <a class="add-to-wishlist" href="#">
+          Add to wishlist
+        </a>
+      </div>
+    </article>
+  </main>
+  <script type="module" src="/src/ts/main.ts"></script>
+</body>
+
 </html>
+
+
+<!-- 
+leepercox@silktide.com
+https://silktide.notion.site/Brief-for-Web-Developer-interview-1835bd1d84aa4c4f808f8a996ae82de0 -->
